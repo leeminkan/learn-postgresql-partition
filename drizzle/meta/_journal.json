@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1744295544081,
+      "tag": "0000_create-articles-table",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1744296516188,
+      "tag": "0001_update-articles-table",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1744297138540,
+      "tag": "0002_update-articles-table",
+      "breakpoints": true
+    }
+  ]
+}
