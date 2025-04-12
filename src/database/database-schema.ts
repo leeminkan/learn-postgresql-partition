@@ -1,11 +1,30 @@
-import { serial, text, pgTable } from 'drizzle-orm/pg-core';
+import {
+  pgTable,
+  uuid,
+  varchar,
+  jsonb,
+  timestamp,
+  primaryKey,
+} from 'drizzle-orm/pg-core';
 
-export const articles = pgTable('articles', {
-  id: serial('id').primaryKey(),
-  title: text('title'),
-  content: text('content'),
-});
+export const eventLogs = pgTable(
+  'event_logs',
+  {
+    id: uuid('id').defaultRandom().notNull(),
+    eventType: varchar('event_type', { length: 50 }).notNull(),
+    payload: jsonb('payload'),
+    createdAt: timestamp('created_at', { mode: 'date', withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => {
+    return {
+      // Define the composite primary key here
+      pk: primaryKey({ columns: [table.id, table.createdAt] }),
+    };
+  },
+);
 
 export const databaseSchema = {
-  articles,
+  eventLogs,
 };

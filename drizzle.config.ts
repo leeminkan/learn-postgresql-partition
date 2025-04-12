@@ -18,4 +18,8 @@ export default defineConfig({
     database: configService.get('POSTGRES_DB'),
     ssl: false,
   },
+  migrations: {
+    table: '__drizzle_migrations', // `__drizzle_migrations` by default
+    schema: 'public', // used in PostgreSQL only, `drizzle` by default
+  },
 } as Config);

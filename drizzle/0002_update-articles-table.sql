@@ -1,1 +1,0 @@
-ALTER TABLE "articles" DROP COLUMN "created_at";

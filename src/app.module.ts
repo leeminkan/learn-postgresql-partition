@@ -3,7 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as Joi from 'joi';
 import { DatabaseModule } from './database/database.module';
 import { DatabaseOptions } from './database/database-options';
-import { ArticlesModule } from './articles/articles.module';
+import { EventLogsModule } from './event-logs/event-logs.module';
 
 @Module({
   imports: [
@@ -28,7 +28,7 @@ import { ArticlesModule } from './articles/articles.module';
         POSTGRES_DB: Joi.string().required(),
       }),
     }),
-    ArticlesModule,
+    EventLogsModule,
   ],
 })
 export class AppModule {}
