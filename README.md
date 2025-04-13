@@ -80,9 +80,9 @@ Let's set up a task for you.
       ```env
       POSTGRES_HOST=localhost
       POSTGRES_PORT=5432
-      POSTGRES_USER=admin
+      POSTGRES_USER=user
       POSTGRES_PASSWORD=password
-      POSTGRES_DB=test_db
+      POSTGRES_DB=event_logs_db
       ```
 
 **Step 2: Drizzle ORM Setup & Schema Definition**
